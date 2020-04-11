@@ -16,7 +16,7 @@ setup(
         'six==1.11.0'
     ],
     packages=[
-        'bin'
+        'qcsv'
     ],
     entry_points={
         'console_scripts': [

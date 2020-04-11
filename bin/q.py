@@ -23,14 +23,13 @@
 #
 # Its purpose is to bring SQL expressive power to manipulating text data using the Linux command line.
 #
-# Full Documentation and details in http://harelba.github.io/q/ 
+# Full Documentation and details in http://harelba.github.io/q/
 #
 # Run with --help for command line details
 #
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
-from __version__ import q_version
 
 __all__ = [ 'QTextAsData' ]
 
@@ -775,7 +774,7 @@ class MaterializedFileState(object):
 
     def read_file_using_csv(self):
         # This is a hack for utf-8 with BOM encoding in order to skip the BOM. python's csv module
-        # has a bug which prevents fixing it using the proper encoding, and it has been encountered by 
+        # has a bug which prevents fixing it using the proper encoding, and it has been encountered by
         # multiple people.
         if self.encoding == 'utf-8-sig' and self.lines_read == 0 and not self.skipped_bom:
             try:
@@ -1141,6 +1140,7 @@ def determine_max_col_lengths(m,output_field_quoting_func,output_delimiter):
     return max_lengths
 
 def print_credentials():
+    from __version__ import q_version
     print("q version %s" % q_version, file=sys.stderr)
     print("Python: %s" % " // ".join([str(x).strip() for x in sys.version.split("\n")]), file=sys.stderr)
     print("Copyright (C) 2012-2019 Harel Ben-Attia (harelba@gmail.com, @harelba on twitter)", file=sys.stderr)
